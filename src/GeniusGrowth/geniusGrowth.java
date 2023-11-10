@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package s;
+package GeniusGrowth;
 
 /**
  *
  * @author Afnan
  */
-public class S {
+public class geniusGrowth {
 
     /**
      * @param args the command line arguments

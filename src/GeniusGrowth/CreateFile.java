@@ -72,5 +72,11 @@ public class CreateFile {
         this.state = state;
     }
 
+    @Override
+    public String toString() {
+        return "Idea: "+IdeaName+"\n"+"description: "+description+"\nOwnername: "+OwnerName+"\nState: "+
+                state +"\nFavorite: "+favoriteState;
+    }
+
     
 }

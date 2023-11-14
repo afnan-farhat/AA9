@@ -1,5 +1,21 @@
+<<<<<<< HEAD
 Idea: nn
 description: n
 Ownername: l
  State: waiting
  Favorite: false 
+=======
+Idea: a
+description: a
+Ownername: aa
+ State: waiting
+ Favorite: falseIdea: 2
+description: 2
+Ownername: 2
+ State: waiting
+ Favorite: falseIdea: f
+description: f
+Ownername: f
+ State: waiting
+ Favorite: false
+>>>>>>> origin/master

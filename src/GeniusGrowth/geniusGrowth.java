@@ -5,19 +5,29 @@
  */
 package GeniusGrowth;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 /**
  *
  * @author Afnan
  */
 public class geniusGrowth {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("Afnan");
-        System.out.println("marya");
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter your name: ");
+        String Ownername = in.nextLine();
+        
+        System.out.println("Enter the idea name: ");
+        String ideaName = in.nextLine();
+        
+        System.out.println("Enter the description of idea: ");
+
+        String description = in.nextLine();
+
+        CreateFile file = new CreateFile(ideaName, description, Ownername);
     }
-    
 }

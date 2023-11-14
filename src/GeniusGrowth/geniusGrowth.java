@@ -20,14 +20,15 @@ public class geniusGrowth {
     private static ArrayList<CreateFile> fileIdeas = new ArrayList<>();
 
     public static void main(String[] args) throws FileNotFoundException {
+        String FavIdea;
         Scanner in = new Scanner(System.in);
         PrintWriter PrintInFile = new PrintWriter("Ideas");
 
         System.out.println("Enter the the number of idea file: ");
-        int FileNo = in.nextInt();
-        CreateFile file = null;
-        for (int i = 0; i < FileNo; i++) {
-            System.out.println("the file:" + (i + 1));
+        int FileNo = 1;
+        CreateFile file;
+      do{
+            System.out.println("the file:" + FileNo++);
             System.out.println("\tEnter your name: ");
             String Ownername = in.next();
 
@@ -44,17 +45,17 @@ public class geniusGrowth {
             //Print value
 
             PrintInFile.write(file.toString());
-            System.out.println("+ " +  file.getFavoriteState());
+           
 
-            String FavIdea;
+            
             System.out.println("Do you want to add idea to Favorite place (enter Y for yes or N for no) :");
             FavIdea = in.next();
            if (FavIdea.equalsIgnoreCase("Y")) {
                file.ChangeFavoriteIdea();
            }
-            file = new CreateFile(ideaName, description, Ownername, file.getFavoriteState(), file.getState());
+            file = new CreateFile(FileNo+"."+ideaName, description, Ownername, file.getFavoriteState(), file.getState());
             PrintInFile.write(file.toString());
-        }
+        }while(!(FavIdea.equalsIgnoreCase("y")));
 
         PrintInFile.close();
         PrintInFile.flush();

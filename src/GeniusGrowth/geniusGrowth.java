@@ -18,6 +18,7 @@ public class geniusGrowth {
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(System.in);
+        PrintWriter PrintInFile=new PrintWriter("Ideas");
         System.out.println("Enter your name: ");
         String Ownername = in.nextLine();
         
@@ -29,5 +30,12 @@ public class geniusGrowth {
         String description = in.nextLine();
 
         CreateFile file = new CreateFile(ideaName, description, Ownername);
+        
+        PrintInFile.write("Idea: "+ideaName+"\n"+"description: "+description+"\nOwnername: "+Ownername+"\n State: "+file.getState()
+        +"\n Favorite: "+file.getFavoriteState());
+        
+        
+        PrintInFile.close();
+        PrintInFile.flush();
     }
 }

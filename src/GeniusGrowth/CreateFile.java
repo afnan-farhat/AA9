@@ -72,7 +72,13 @@ public class CreateFile {
         this.state = state;
     }
     
-    
+     public  void ChangeStateIdea() {
+        if (getState().equalsIgnoreCase("waiting")) {
+            setState("Accept");
+        } else {
+            System.out.println("The idea has been accepted");
+        }
+    }
    
     
     public  void ChangeFavoriteIdea() {

@@ -32,7 +32,7 @@ public class geniusGrowth {
         CreateFile file = new CreateFile(ideaName, description, Ownername);
         
         PrintInFile.write("Idea: "+ideaName+"\n"+"description: "+description+"\nOwnername: "+Ownername+"\n State: "+file.getState()
-        +"\n Favorite: "+file.getFavoriteState());
+        +"\n Favorite: "+file.getFavoriteState()+"");
         
         
         PrintInFile.close();

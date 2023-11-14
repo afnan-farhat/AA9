@@ -8,6 +8,7 @@ package GeniusGrowth;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -16,25 +17,37 @@ import java.util.Scanner;
  */
 public class geniusGrowth {
 
+    private static ArrayList<CreateFile> fileIdeas = new ArrayList<>();
+
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(System.in);
-        PrintWriter PrintInFile=new PrintWriter("Ideas");
-        System.out.println("Enter your name: ");
-        String Ownername = in.nextLine();
+        PrintWriter PrintInFile = new PrintWriter("Ideas");
         
-        System.out.println("Enter the idea name: ");
-        String ideaName = in.nextLine();
-        
-        System.out.println("Enter the description of idea: ");
+        System.out.println("Enter the the number of idea file: ");
+        int FileNo = in.nextInt();
 
-        String description = in.nextLine();
+        for (int i = 0; i < FileNo; i++) {
+            System.out.println("the file:" + (i +1) );
+            System.out.println("\tEnter your name: ");
+            String Ownername = in.next();
 
-        CreateFile file = new CreateFile(ideaName, description, Ownername);
-        
-        PrintInFile.write("Idea: "+ideaName+"\n"+"description: "+description+"\nOwnername: "+Ownername+"\n State: "+file.getState()
-        +"\n Favorite: "+file.getFavoriteState());
-        
-        
+            System.out.println("\tEnter the idea name: ");
+            String ideaName = in.next();
+
+            System.out.println("\tEnter the description of idea: ");
+
+            String description = in.next();
+
+            CreateFile file = new CreateFile(ideaName, description, Ownername);
+
+            fileIdeas.add(file);
+            //Print value
+
+            PrintInFile.write(file.toString());
+            System.out.println("");
+
+        }
+
         PrintInFile.close();
         PrintInFile.flush();
     }

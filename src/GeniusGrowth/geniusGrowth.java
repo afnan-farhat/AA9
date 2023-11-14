@@ -52,6 +52,9 @@ public class geniusGrowth {
             PrintInFile.write(file.toString());
             System.out.println("");
 
+            
+            file.ChangeFavoriteIdea();
+            
         }
 
 

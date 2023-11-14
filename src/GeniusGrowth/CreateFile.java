@@ -24,6 +24,13 @@ public class CreateFile {
         this.state = "waiting";
     }
 
+    CreateFile() {
+        this.IdeaName = IdeaName;
+        this.description = description;
+        this.OwnerName = OwnerName;
+        this.favoriteState = false;
+        this.state = "waiting";
+    }
     CreateFile(String IdeaName, String description, String OwnerName, boolean favoriteState, String state) {
         this.IdeaName = IdeaName;
         this.description = description;
@@ -75,9 +82,10 @@ public class CreateFile {
      public  void ChangeStateIdea() {
         if (getState().equalsIgnoreCase("waiting")) {
             setState("Accept");
-        } else {
+        } else if (getState().equalsIgnoreCase("Accept")) {
             System.out.println("The idea has been accepted");
-        }
+        } else
+             System.out.println("The idea wss Reject");
     }
    
     
